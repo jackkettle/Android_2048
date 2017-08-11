@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/scoresLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/gameGridLayout"
+        android:layout_alignEnd="@+id/gameGridLayout"
+        android:layout_alignStart="@+id/gameGridLayout"
+        android:gravity="center"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/scoreLayout"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/gameGridBg"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:id="@+id/scoreLabelText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:paddingTop="5dp"
+                android:text="Score"
+                android:textColor="@color/lightText"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/scoreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scoreLabelText"
+                android:gravity="center"
+                android:textColor="@color/lightText"
+                android:text="TextView"
+                android:paddingTop="10dp"
+                tools:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/highScoreLayout"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/gameGridBg"
+            android:layout_marginLeft="10dp">
+
+
+            <TextView
+                android:id="@+id/highScoreLabelText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/lightText"
+                android:textStyle="bold"
+                tools:text="High Score" />
+
+            <TextView
+                android:id="@+id/highScoreText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/highScoreLabelText"
+                android:textColor="@color/lightText"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/actionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/gameGridLayout"
+        android:layout_alignEnd="@+id/scoresLayout"
+        android:layout_alignStart="@+id/gameGridLayout"
+        android:layout_marginTop="120dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/undoButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="undoLast"
+            app:srcCompat="@drawable/ic_undo_black_24dp" />
+        />
+
+        <ImageButton
+            android:id="@+id/resetButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="resetGame"
+            app:srcCompat="@drawable/ic_refresh_black_24dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gameGridLayout"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:orientation="horizontal">
+
+        <GridView
+            android:id="@+id/gridViewId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:background="@color/gameGridBg"
+            android:clickable="false"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:padding="10dp"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="10dp" />
+    </LinearLayout>
+
+</RelativeLayout>
